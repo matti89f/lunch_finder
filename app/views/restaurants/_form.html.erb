@@ -1,52 +1,60 @@
 <%= form_for(@restaurant) do |f| %>
-  <% if @restaurant.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+<% if @restaurant.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@restaurant.errors.count, "error") %>
+    prohibited this restaurant from being saved:</h2>
 
-      <ul>
-      <% @restaurant.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @restaurant.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :Name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :website %><br>
-    <%= f.text_field :website %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :opening %><br>
-    <%= check_box_tag('restaurant[opening][]', 'Mon') %> Mon
-    <%= check_box_tag('restaurant[opening][]', 'Tus') %> Tus
-    <%= check_box_tag('restaurant[opening][]', 'Wed') %> Wed
-    <%= check_box_tag('restaurant[opening][]', 'Thu') %> Thu
-    <%= check_box_tag('restaurant[opening][]', 'Fri') %> Fri
-    <%= check_box_tag('restaurant[opening][]', 'Sat') %> Sat
-    <%= check_box_tag('restaurant[opening][]', 'Sun') %> Sun
-  </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :vegan %>:
-    <%= f.check_box :vegan %>
-  </div>
-  <div class="field">
-    <%= f.label :comments %><br>
-    <%= f.text_area :comments %>
-  </div>
+<div class="field">
+  <%= f.label :Name %><br>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :website %><br>
+  <%= f.text_field :website %>
+</div>
+<div class="field">
+  <%= f.label :image_url %><br>
+  <%= f.text_field :image_url %>
+</div>
+<div class="field">
+  <%= f.label :opening %><br>
+  <%= check_box_tag('restaurant[opening][]', 'Mon') %>
+  Mon
+  <%= check_box_tag('restaurant[opening][]', 'Tus') %>
+  Tus
+  <%= check_box_tag('restaurant[opening][]', 'Wed') %>
+  Wed
+  <%= check_box_tag('restaurant[opening][]', 'Thu') %>
+  Thu
+  <%= check_box_tag('restaurant[opening][]', 'Fri') %>
+  Fri
+  <%= check_box_tag('restaurant[opening][]', 'Sat') %>
+  Sat
+  <%= check_box_tag('restaurant[opening][]', 'Sun') %>
+  Sun
+</div>
+<div class="field">
+  <%= f.label :location %><br>
+  <%= f.text_field :location %>
+</div>
+<div class="field">
+  <%= f.label :vegan %>:
+  <%= f.check_box :vegan %>
+</div>
+<div class="field">
+  <%= f.label :comments %><br>
+  <%= f.text_area :comments %>
+</div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

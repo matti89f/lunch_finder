@@ -71,17 +71,13 @@ class RestaurantsController < ApplicationController
   end
 
   def redirect_to_random
-    # binding.pry
-    @restaurant = Restaurant.where(vegan: false).take!
+     @restaurant = Restaurant.where(vegan: false).sample
     render 'show'
   end
 
-
   def redirect_to_random_vegan
-    @restaurant = Restaurant.where(vegan: true).take!
-  # @restaurant = Restaurant.offset(rand(Restaurant.count)).first!
+    @restaurant = Restaurant.where(vegan: true).sample
      render 'show'
-   
   end
 
    def opening(restaurant)
