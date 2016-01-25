@@ -1,0 +1,5 @@
+<% if @restaurants.present? %>
+  <%= render @restaurants %>
+<% else %>
+  <p>There are no containing the term(s) <%= params[:search] %>.</p>
+<% end %>

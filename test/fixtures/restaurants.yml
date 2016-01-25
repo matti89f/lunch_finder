@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+   name: MyString
+  website: MyString
+  image_url: MyString
+  opening: MyString
+  location: MyString
+  vegan: false
+  comments: MyText
+
+two:
+   name: MyString
+  website: MyString
+  image_url: MyString
+  opening: MyString
+  location: MyString
+  vegan: false
+  comments: MyText

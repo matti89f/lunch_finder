@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LunchFinder</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-3 sidenav">
+          <h4>Welcome</h4></br>
+          <ul class="nav nav-pills nav-stacked">
+            <div id="cssmenu">
+            <ul>
+            <li class="active"><%= link_to 'Home', restaurants_home_page_path %></li>
+            <li><%= link_to 'All Restaurant', restaurants_path %></li>
+            <li><%= link_to 'New Restaurants', new_restaurant_path %></li>
+            <li><%= link_to 'About', restaurants_about_path %></li>
+            <li><%= link_to 'Suggestion', restaurants_redirect_to_random_path %></li>
+            <li><%= link_to 'Suggestion with vegan', restaurants_redirect_to_random_vegan_path %></li>
+          </ul>
+          </div>
+
+          <br>
+          <%= form_tag(restaurants_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+          <%= submit_tag "Search" %>
+          <% end %>
+        </div>
+
+        <div class="col-sm-9">
+          <h4>
+            <big>Restaurants</big>
+          </h4>
+          <%= yield %>
+
+          <p>
+            <span class="badge"></span>
+            
+          </p>
+          <br>
+
+          <div class="row">
+            <div class="col-sm-2 text-center"></div>
+            <div class="col-sm-10"></div>
+            <div class="col-sm-2 text-center"></div>
+            <div class="col-sm-10">
+
+              <div class="row">
+                <div class="col-sm-2 text-center"></div>
+                <div class="col-xs-10"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container-fluid"></footer>
+  </body>
+</html>

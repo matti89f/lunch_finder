@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://localhost:3000/restaurants/53/edit -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LunchFinder</title>
+  <link rel="stylesheet" media="all" href="./LunchFinder_files/_normalize.self-fdbec7b9b90b8a5ea1b591c74941585afbc6425c67e3f164d27fb23fbcf36aa6.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="./LunchFinder_files/restaurants.self-80ebb9f0c21d7d3fa2947c2f0dc12a3c862ebcc8564f8b25fb09b66bf76dd72e.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="./LunchFinder_files/scaffolds.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="./LunchFinder_files/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css" data-turbolinks-track="true">
+  <script src="./LunchFinder_files/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js" data-turbolinks-track="true"></script>
+<script src="./LunchFinder_files/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js" data-turbolinks-track="true"></script>
+<script src="./LunchFinder_files/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js" data-turbolinks-track="true"></script>
+<script src="./LunchFinder_files/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="true"></script>
+<script src="./LunchFinder_files/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js" data-turbolinks-track="true"></script>
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="QFkNpw9v+3zpkFirmeh2LWdFfkvh2ADR4p2KzCviLGQBzrdwwhWbwsoTJsit0bkFuIC0IyfRKTQdjLmHJSQo4A==">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./LunchFinder_files/jquery.min.js"></script>
+  <script src="./LunchFinder_files/bootstrap.min.js"></script>
+</head>
+ <body>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Welcome </h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="http://localhost:3000/">Home</a></li>
+        <li><a href="http://localhost:3000/">All Restaurant</a></li>
+        <li><a href="http://localhost:3000/restaurants/redirect_to_random">Suggestion</a></li>
+        <li><a href="http://localhost:3000/restaurants/new">New Restaurants</a></li>
+        <li><a href="http://localhost:3000/restaurants/new">About</a></li>
+      </ul><br>
+      <!-- <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div> -->
+    </div>
+
+    <div class="col-sm-9">
+      <h4><big>Restaurants</big></h4>
+      <h1>Editing Restaurant</h1>
+
+<form class="edit_restaurant" id="edit_restaurant_53" action="http://localhost:3000/restaurants/53" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="yfER5fjTNI8UtySUlX3Cp3d72vV5wPapb4acExqPEJqIZqsyNalUMTc0WvehRA2PqL4Qnb/J30yQl69YFEkUHg==">
+
+  <div class="field">
+    <label for="restaurant_Name">Name</label><br>
+    <input type="text" value="Subway111" name="restaurant[name]" id="restaurant_name">
+  </div>
+  <div class="field">
+    <label for="restaurant_website">Website</label><br>
+    <input type="text" value="subway-sandwiches.de" name="restaurant[website]" id="restaurant_website" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAALHRFWHRDcmVhdGlvbiBUaW1lAEZyaSAxMiBOb3YgMjAxMCAxOTowNzowMiArMTIwMOGr8p4AAAAHdElNRQfaCwwGBxwduq16AAAACXBIWXMAAAsSAAALEgHS3X78AAAABGdBTUEAALGPC/xhBQAAAfJJREFUeNqVkk1vElEUhp87X4CIFhhMG0toMC5K3Lgxbro10bhxY2Jc+CO666Y/oP/DxFVjTKM7l1apTdM0JSU0LSg0WqaUjwE6MDNebGpKBYlndc+55zw5H6/gim2UUd0qs5Uy6VaTa7EYdtOmUN7naHER92q+dtnZ2UFpHTOTXWfuwxrfYlNUHz1lxvdIVyx6MuXHPwFeBLW2z+29Pepr7ziUof7SEq1CibCEmKMAymXH6SD6LrpzRndQPIjNz9P3odu2URlhQ4C+ghcM0JpLEchkzrv7eIDS62JYP2lPBJS2cIMhyrMpwo+fMbW8jLhhc2t3F906pjoK8GcH29vonoenRDk1m5zcvUM6ZuJvZEnmcljT09hbR6iVIuLJw/PxhgAOPOj26Gk1nEQCNWAQ7XS4bxvw8hWuGedeo4iR+/y7+OtfgM1N9OIBwnFQ5SLdZJJ2JML17BdqEuYHgmiahsjnx4zw/i2fslm8dht/YQHx/AWpfI50/ZTKm9d8lykiHkf4/hjA6ipnF++VFRS7T1AoaDejyCEYlHmWNeEKF9YISz30CBkGirxKUIZGamAsQG2hux66BAipi1A6g/5fAM/HkGrUFfmr6wSSiWHJTwQoPrq8hCYEGDoh0xzfwUhyIY9ROkRrNKQ65e1P6uM7+AW+ibcHEM1ixAAAAABJRU5ErkJggg==&quot;); background-position: 132px 0px; background-repeat: no-repeat;">
+  </div>
+  <div class="field">
+    <label for="restaurant_image_url">Image url</label><br>
+    <input type="text" value="" name="restaurant[image_url]" id="restaurant_image_url">
+  </div>
+  <div class="field">
+    <label for="restaurant_opening">Opening</label><br>
+    <input type="checkbox" name="restaurant[opening]" id="restaurant_opening" value="Mon"> Mon
+    <input type="checkbox" name="restaurant[opening]" id="restaurant_opening" value="Tus"> Tus
+    <input type="checkbox" name="restaurant[opening]" id="restaurant_opening" value="Wed"> Wed
+    <input type="checkbox" name="restaurant[opening]" id="restaurant_opening" value="Thu"> Thu
+    <input type="checkbox" name="restaurant[opening]" id="restaurant_opening" value="Fri"> Fri
+    <input type="checkbox" name="restaurant[opening]" id="restaurant_opening" value="Sat"> Sat
+    <input type="checkbox" name="restaurant[opening]" id="restaurant_opening" value="Sun"> Sun
+  </div>
+
+  <div class="field">
+    <label for="restaurant_location">Location</label><br>
+    <input type="text" value="Gänsemarkt 36, 20354 Hamburg" name="restaurant[location]" id="restaurant_location">
+  </div>
+  <div class="field">
+    <label for="restaurant_vegan">Vegan</label>:
+    <input name="restaurant[vegan]" type="hidden" value="0"><input type="checkbox" value="1" checked="checked" name="restaurant[vegan]" id="restaurant_vegan">
+  </div>
+  <div class="field">
+    <label for="restaurant_comments">Comments</label><br>
+    <textarea name="restaurant[comments]" id="restaurant_comments">A sub way food</textarea>
+  </div>
+  <div class="actions">
+    <input type="submit" name="commit" value="Update Restaurant">
+  </div>
+</form>
+
+<a href="http://localhost:3000/restaurants/53">Show</a> |
+<a href="http://localhost:3000/restaurants">Back</a>
+
+
+<!-- <div class="col-xs-10">
+              <br>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    
+  
+
+
+<footer class="container-fluid">
+  <p>Footer Text</p>
+</footer>
+
+
+</body></html>

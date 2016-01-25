@@ -1,0 +1,42 @@
+<h5 style="color:#98C222;"><p id="notice"><%= notice %></p></h5>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= link_to @restaurant.website, "http://#{@restaurant.website}" %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%=  link_to @restaurant.image_url, "http://#{@restaurant.website}" %>
+</p>
+
+<p>
+  <strong>Opening Days:</strong>
+  <%= @restaurant.opening %>
+<p>
+
+  <strong>Location:</strong>
+  <%= @restaurant.location %>
+</p>
+
+<p>
+  <strong>Vegan:</strong>
+  <%= @restaurant.vegan %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @restaurant.comments %>
+</p>
+
+
+<p class='edit'>
+  | <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
+  | <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: { confirm: 'Are you Sure?' } %>
+  | <%= link_to 'Back', restaurants_path %>
+</p>
