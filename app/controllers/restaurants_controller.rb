@@ -10,6 +10,12 @@ class RestaurantsController < ApplicationController
   else
     @restaurants = Restaurant.all.order('created_at DESC')
   end
+
+    if params[:search].present?
+    @restaurants = Restaurant.near(params[:search], 50, :order => :distance)
+  else
+    @restaurants = Restaurant.all
+  end
   end
 
   # GET /restaurants/1
@@ -71,13 +77,13 @@ class RestaurantsController < ApplicationController
   end
 
   def redirect_to_random
-     @restaurant = Restaurant.where(vegan: false).sample
+    @restaurant = Restaurant.where(vegan: false).sample
     render 'show'
   end
 
   def redirect_to_random_vegan
     @restaurant = Restaurant.where(vegan: true).sample
-     render 'show'
+    render 'show'
   end
 
    def opening(restaurant)
@@ -93,6 +99,11 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :website, :image_url, :location, :vegan, :comments, :opening => [])
+      params.require(:restaurant).permit(:name, :website, :image, :location, :latitude, :longitude, :vegan, :comments, :opening => [])
     end
 end
+
+
+
+
+      

@@ -3,7 +3,7 @@
 one:
    name: MyString
   website: MyString
-  image_url: MyString
+  image: MyString
   opening: MyString
   location: MyString
   vegan: false
@@ -12,7 +12,7 @@ one:
 two:
    name: MyString
   website: MyString
-  image_url: MyString
+  image: MyString
   opening: MyString
   location: MyString
   vegan: false

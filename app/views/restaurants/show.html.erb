@@ -10,21 +10,18 @@
 <p>
   <strong>Website:</strong>
   <%= link_to @restaurant.website, "http://#{@restaurant.website}" %>
+  
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%=  link_to @restaurant.image_url, "http://#{@restaurant.website}" %>
+  <%= image_tag @restaurant.image.url( :medium, class: "restaurant_image") %>
 </p>
 
 <p>
   <strong>Opening Days:</strong>
   <%= @restaurant.opening %>
-  <p>
+</p>
 
-    <strong>Location:</strong>
-    <%= @restaurant.location %>
-  </p>
 
   <p>
     <strong>Vegan:</strong>
@@ -44,3 +41,20 @@
     |
     <%= link_to 'Back', restaurants_path %>
   </p>
+
+
+   <p>
+<strong>Address:</strong>
+  <%= @restaurant.location %><br>
+    <iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyByvLVT63J7qkBgDe7VL50GvH3Ywcizf90
+    &q=<%=@restaurant.location %>" allowfullscreen>
+</iframe>
+    <% for restaurant in @restaurant.nearbys(10) %>
+  <li><%= link_to @restaurant.location, restaurant %> (<%= restaurant.distance.round(2) %> miles)</li>
+<% end %>
+  </p>
+ 
