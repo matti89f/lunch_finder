@@ -29,7 +29,7 @@
 <div class="field">
   <%= f.label :opening %><br>
   <% Date::DAYNAMES.each do |day| %>
-    <%= check_box_tag('restaurant[opening][]', day) %>
+    <%= check_box_tag('restaurant[opening][]', day, true) %>
     <%= label_tag day %>
   <% end %>
 </div>
@@ -37,7 +37,6 @@
   <%= f.label :location %><br>
   <%= f.text_field :location %>
 </div>
-
 
 
 <div class="field">

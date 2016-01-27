@@ -13,10 +13,6 @@
   </tr>
 
 
-<!-- <p>
-  <%= image_tag @restaurant.image.url( :medium, class: "restaurant_image") %>
-</p> -->
-
 <tr class="alt">
   <td><strong>Opening Days:</strong></td>
   <td><%= @restaurant.opening %></td>
@@ -56,7 +52,9 @@
     &q=<%=@restaurant.location %>" allowfullscreen>
 </iframe>
   
-
+<p>
+  <%= image_tag @restaurant.image.url( :medium, class: "restaurant_image") %>
+</p> 
 
 
 

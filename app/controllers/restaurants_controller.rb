@@ -11,7 +11,7 @@ class RestaurantsController < ApplicationController
       @restaurants = Restaurant.all
     end
     if params[:search]
-      @restaurants = Restaurant.where("name like ?", "%#{params[:search]}%").order("created_at DESC")
+      @restaurants = Restaurant.where("name like ? OR website LIKE ? OR comments LIKE :search", search: "%#{params[:search]}%").order("created_at DESC")
     else
       @restaurants = Restaurant.all.order('created_at DESC')
     end
@@ -76,7 +76,7 @@ class RestaurantsController < ApplicationController
   end
 
   def redirect_to_random
-    @restaurant = Restaurant.where(vegan: false).sample
+    @restaurant = Restaurant.offset(rand(Restaurant.count)).first
     render 'show'
   end
 
