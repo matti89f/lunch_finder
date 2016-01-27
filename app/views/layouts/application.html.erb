@@ -14,10 +14,11 @@
     <div class="container-fluid">
       <div class="row content">
         <div class="col-sm-3 sidenav">
-          <h4>Welcome</h4>
+          <h3>Welcome to Lunch Finder</h3>
         </br>
         <ul class="nav nav-pills nav-stacked">
           <div id="cssmenu">
+            <div class="shadow">
             <ul>
               <li class="active"><%= link_to 'Home', restaurants_home_page_path %></li>
               <li><%= link_to 'All Restaurant', restaurants_path %></li>
@@ -26,8 +27,9 @@
               <li><%= link_to 'Suggestion(non vegan)', restaurants_redirect_to_random_path %></li>
               <li><%= link_to 'Suggestion(vegan)', restaurants_redirect_to_random_vegan_path %></li>
             </ul>
+           </div>
           </div>
-
+          
           <br>
           <%= form_tag(restaurants_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search" %>
@@ -36,9 +38,7 @@
         </div>
 
         <div class="col-sm-9">
-          <h4>
-            <big>Restaurants</big>
-          </h4>
+          <br>
           <%= yield %>
 
           <p>

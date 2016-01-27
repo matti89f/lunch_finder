@@ -1,38 +1,41 @@
-<h5 style="color:#98C222;">
-  <p id="notice"><%= notice %></p>
-</h5>
+<div class="shadow">
+<div class="datagrid">
+  <table>
+<tbody>
+<tr class="alt">
+  <td><strong>Name:</strong></td>
+  <td><%= @restaurant.name.capitalize %></td>
+</tr>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+<tr>
+  <td><strong>Website:</strong></td>
+  <td><%= link_to @restaurant.website, "http://#{@restaurant.website}" %></td>
+  </tr>
 
-<p>
-  <strong>Website:</strong>
-  <%= link_to @restaurant.website, "http://#{@restaurant.website}" %>
-  
-</p>
 
-<p>
+<!-- <p>
   <%= image_tag @restaurant.image.url( :medium, class: "restaurant_image") %>
-</p>
+</p> -->
 
-<p>
-  <strong>Opening Days:</strong>
-  <%= @restaurant.opening %>
-</p>
+<tr class="alt">
+  <td><strong>Opening Days:</strong></td>
+  <td><%= @restaurant.opening %></td>
+</tr>
 
+  <tr >
+    <td><strong>Vegan:</strong></td>
+    <td><%= @restaurant.vegan %></td>
+  </tr>
 
-  <p>
-    <strong>Vegan:</strong>
-    <%= @restaurant.vegan %>
-  </p>
-
-  <p>
-    <strong>Comments:</strong>
-    <%= @restaurant.comments %>
-  </p>
-
+  <tr class="alt">
+    <td><strong>Comments:</strong></td>
+    <td><%= @restaurant.comments %></td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
+<br>
   <p class='edit'>
     |
     <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
@@ -42,19 +45,21 @@
     <%= link_to 'Back', restaurants_path %>
   </p>
 
-
-   <p>
+  
 <strong>Address:</strong>
-  <%= @restaurant.location %><br>
-    <iframe
+    <% for restaurant in @restaurant.nearbys(10) %>
+  <%=  @restaurant.location %> <br>
+     <iframe
   width="600"
   height="450"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyByvLVT63J7qkBgDe7VL50GvH3Ywcizf90
     &q=<%=@restaurant.location %>" allowfullscreen>
 </iframe>
-    <% for restaurant in @restaurant.nearbys(10) %>
-  <li><%= link_to @restaurant.location, restaurant %> (<%= restaurant.distance.round(2) %> miles)</li>
 <% end %>
-  </p>
- 
+  
+
+
+
+
+
