@@ -28,20 +28,10 @@
 
 <div class="field">
   <%= f.label :opening %><br>
-  <%= check_box_tag('restaurant[opening][]', 'Mon') %>
-  Mon
-  <%= check_box_tag('restaurant[opening][]', 'Tus') %>
-  Tus
-  <%= check_box_tag('restaurant[opening][]', 'Wed') %>
-  Wed
-  <%= check_box_tag('restaurant[opening][]', 'Thu') %>
-  Thu
-  <%= check_box_tag('restaurant[opening][]', 'Fri') %>
-  Fri
-  <%= check_box_tag('restaurant[opening][]', 'Sat') %>
-  Sat
-  <%= check_box_tag('restaurant[opening][]', 'Sun') %>
-  Sun
+  <% Date::DAYNAMES.each do |day| %>
+    <%= check_box_tag('restaurant[opening][]', day) %>
+    <%= label_tag day %>
+  <% end %>
 </div>
 <div class="field">
   <%= f.label :location %><br>

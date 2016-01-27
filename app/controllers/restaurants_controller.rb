@@ -5,11 +5,11 @@ class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
     opening(@restaurant)
-if params[:search].present?
-    @restaurants = Restaurant.near(params[:search], 50, :order => :distance)
-  else
-    @restaurants = Restaurant.all
-  end
+    if params[:search].present?
+      @restaurants = Restaurant.near(params[:search], 50, :order => :distance)
+    else
+      @restaurants = Restaurant.all
+    end
     if params[:search]
       @restaurants = Restaurant.where("name like ?", "%#{params[:search]}%").order("created_at DESC")
     else
