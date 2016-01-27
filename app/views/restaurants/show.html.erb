@@ -48,7 +48,7 @@
   
 <strong>Address:</strong>
     <% for restaurant in @restaurant.nearbys(10) %>
-  <%=  @restaurant.location %> <br>
+  <%=  @restaurant.location %>(<%= restaurant.distance.round(2) %> miles) <br>
      <iframe
   width="600"
   height="450"
