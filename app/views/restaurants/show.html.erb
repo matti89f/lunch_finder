@@ -47,8 +47,7 @@
 
   
 <strong>Address:</strong>
-    <% for restaurant in @restaurant.nearbys(10) %>
-  <%=  @restaurant.location %>(<%= restaurant.distance.round(2) %> miles) <br>
+  <%=  @restaurant.location %> <br>
      <iframe
   width="600"
   height="450"
@@ -56,7 +55,6 @@
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyByvLVT63J7qkBgDe7VL50GvH3Ywcizf90
     &q=<%=@restaurant.location %>" allowfullscreen>
 </iframe>
-<% end %>
   
 
 
