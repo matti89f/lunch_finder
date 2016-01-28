@@ -1,27 +1,42 @@
-<p>
-  <div class='showpagefont'><strong>Name:</strong></div>
-  <div class='showpage'><%= @restaurant.name.split(' ').map {|w| w.capitalize }.join(' ')%> </div>
-</p>
+<div class="text-center"><h1><%= @restaurant.name %></h1></div>
+<div class="text-center">
+  <%= image_tag @restaurant.image.url( :medium, class: "restaurant_image") %>
+</div> 
 
 <p>
-  <div class='showpagefont'><strong>Website: </strong></div>
+  <div class='showpagefont'><strong>Webseite: </strong></div>
   <div class='showpage'><%= link_to @restaurant.website, "http://#{@restaurant.website}" %></div>
 </p>
 
 <p>
-  <div class='showpagefont'><strong>Opening Days: </strong></div>
-  <div class='showpage'><%= @restaurant.opening %></div>
+  <div class='showpagefont'><strong>Öffnungstage: </strong></div>
+  <div class='showpage'><%= @restaurant.opening_days_string %></div>
 </p>
 
 <p>
   <div class='showpagefont'><strong>Vegan: </strong></div>
-  <div class='showpage'><%= @restaurant.vegan %></div>
-</p>
+  <div class='showpage'><%= @restaurant.vegan ? '✓' : '✗'%></div>
+</p> 
 
 <p>
-  <div class='showpagefont'><strong>Comments: </strong></div>
-  <div class='comments'><%= @restaurant.comments %></div>
+  <div class='showpagefont'><strong>Beschreibung: </strong></div>
+  <div class='showpage'><%= @restaurant.comments %></div>
 </p>
+
+
+
+  
+<div class='showpagefont'><strong>Addresse: </strong></div>
+<div class='showpage'><%=  @restaurant.location %> </div>
+<br>
+<br>
+<iframe
+   width="600"
+   height="450"
+   frameborder="0" style="border:0"
+   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyByvLVT63J7qkBgDe7VL50GvH3Ywcizf90
+   &q=<%=@restaurant.location %>" allowfullscreen>
+</iframe>
 
 
 <p class='edit'>
@@ -32,23 +47,3 @@
     |
     <%= link_to 'Back', restaurants_path %>
 </p>
-
-  
-<div class='showpagefont'><strong>Address: </strong></div>
-  <div class='showpage'><%=  @restaurant.location %> </div>
-  <br>
-    <iframe
-       width="600"
-       height="450"
-       frameborder="0" style="border:0"
-       src="https://www.google.com/maps/embed/v1/place?key=AIzaSyByvLVT63J7qkBgDe7VL50GvH3Ywcizf90
-       &q=<%=@restaurant.location %>" allowfullscreen>
-    </iframe>
-    
-<p>
-  <%= image_tag @restaurant.image.url( :medium, class: "restaurant_image") %>
-</p> 
-
-
-
-

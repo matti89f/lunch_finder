@@ -1,4 +1,5 @@
 class Restaurant < ActiveRecord::Base
+  DAYNAMES = %w(Montag Dienstag Mittwoch Donnerstag Freitag Samstag Sonntag)
   require 'json'
   def self.search(search)
       where("name LIKE ?", "%#{search}%") 
@@ -15,10 +16,18 @@ class Restaurant < ActiveRecord::Base
   after_validation :geocode          # auto-fetch coordinates
   
   def validate_weekdayname
-    JSON.parse(opening).each do |day|
-      unless Date::DAYNAMES.include? day
+    opening_days.each do |day|
+      unless Restaurant::DAYNAMES.include? day
         errors.add(:opening, "ist kein gültiger Wochentag")
       end
     end
+  end
+
+  def opening_days
+    JSON.parse(opening)
+  end
+
+  def opening_days_string
+    opening_days.join(', ')
   end
 end
