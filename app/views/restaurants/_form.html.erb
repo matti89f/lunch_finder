@@ -11,44 +11,48 @@
   </ul>
 </div>
 <% end %>
-
-<div class="field">
+<br>
+<div class="field" style="color:black ;">
   <%= f.label :Name %><br>
   <%= f.text_field :name %>
 </div>
-<div class="field">
+<br>
+<div class="field" style="color:black ;">
   <%= f.label :website %><br>
   <%= f.text_field :website %>
 </div>
 <br>
-<div class="field">
+<div class="field" style="color:black ;">
   <%= f.label :image %>
   <%= f.file_field :image %><br>
 </div>
-
-<div class="field">
+<br>
+<div class="field" style="color:black ;">
   <%= f.label :opening %><br>
   <% Date::DAYNAMES.each do |day| %>
-    <%= check_box_tag('restaurant[opening][]', day, true) %>
+    <%= check_box_tag('restaurant[opening][]', day, checked: 1) %>
     <%= label_tag day %>
   <% end %>
 </div>
-<div class="field">
+<br>
+<div class="field" style="color:black ;">
   <%= f.label :location %><br>
   <%= f.text_field :location %>
 </div>
+<br>
 
-
-<div class="field">
+<div class="field" style="color:black ;">
   <%= f.label :vegan %>:
   <%= f.check_box :vegan %>
 </div>
-<div class="field">
+<br>
+<div class="field" style="color:black ;">
   <%= f.label :comments %><br>
   <%= f.text_area :comments %>
 </div>
-
-<div class="actions">
+<br>
+<div class="actions" style="color:black ;">
   <%= f.submit %>
 </div>
 <% end %>
+<br>
