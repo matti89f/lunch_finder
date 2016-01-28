@@ -1,28 +1,28 @@
 <p>
-  <div class='showpagefont'><strong>Name: </strong></div>
+  <div class='showpagefont'><strong>Name:</strong></div>
   <div class='showpage'><%= @restaurant.name.split(' ').map {|w| w.capitalize }.join(' ')%> </div>
 </p>
-<br>
+
 <p>
   <div class='showpagefont'><strong>Website: </strong></div>
   <div class='showpage'><%= link_to @restaurant.website, "http://#{@restaurant.website}" %></div>
 </p>
-<br>
+
 <p>
   <div class='showpagefont'><strong>Opening Days: </strong></div>
   <div class='showpage'><%= @restaurant.opening %></div>
 </p>
-<br>
+
 <p>
   <div class='showpagefont'><strong>Vegan: </strong></div>
   <div class='showpage'><%= @restaurant.vegan %></div>
 </p>
-<br>
+
 <p>
   <div class='showpagefont'><strong>Comments: </strong></div>
   <div class='comments'><%= @restaurant.comments %></div>
 </p>
-<br>
+
 
 <p class='edit'>
     |
@@ -32,10 +32,11 @@
     |
     <%= link_to 'Back', restaurants_path %>
 </p>
-<br>
+
   
 <div class='showpagefont'><strong>Address: </strong></div>
-  <div class='showpage'><%=  @restaurant.location %> <br></div>
+  <div class='showpage'><%=  @restaurant.location %> </div>
+  <br>
     <iframe
        width="600"
        height="450"
@@ -43,7 +44,7 @@
        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyByvLVT63J7qkBgDe7VL50GvH3Ywcizf90
        &q=<%=@restaurant.location %>" allowfullscreen>
     </iframe>
-    <br>
+    
 <p>
   <%= image_tag @restaurant.image.url( :medium, class: "restaurant_image") %>
 </p> 
