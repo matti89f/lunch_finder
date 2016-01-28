@@ -5,7 +5,7 @@ class Restaurant < ActiveRecord::Base
       where("content LIKE ?", "%#{search}%")
   end
   validates :name, :comments, :website, :location, presence: true
-  validates :name, uniqueness: true, length: { maximum: 40 }
+  validates :name, uniqueness: true, length: { maximum: 20 }
   validate :validate_weekdayname
 
   has_attached_file :image, styles: { medium: "300x300#" }

@@ -1,57 +1,51 @@
-<div class="shadow">
-<div class="datagrid">
-  <table>
-<tbody>
-<tr class="alt">
-  <td><strong>Name:</strong></td>
-  <td><%= @restaurant.name.capitalize %></td>
-</tr>
-
-<tr>
-  <td><strong>Website:</strong></td>
-  <td><%= link_to @restaurant.website, "http://#{@restaurant.website}" %></td>
-  </tr>
 
 
-<tr class="alt">
-  <td><strong>Opening Days:</strong></td>
-  <td><%= @restaurant.opening %></td>
-</tr>
+<p>
+  <div class='showpagefont'><strong>Name: </strong></div>
+  <div class='showpage'><%= @restaurant.name.split(' ').map {|w| w.capitalize }.join(' ')%> </div>
+</p>
 
-  <tr >
-    <td><strong>Vegan:</strong></td>
-    <td><%= @restaurant.vegan %></td>
-  </tr>
+<p>
+  <div class='showpagefont'><strong>Website: </strong></div>
+  <div class='showpage'><%= link_to @restaurant.website, "http://#{@restaurant.website}" %></div>
+</p>
 
-  <tr class="alt">
-    <td><strong>Comments:</strong></td>
-    <td><%= @restaurant.comments %></td>
-  </tr>
-</tbody>
-</table>
-</div>
-</div>
-<br>
-  <p class='edit'>
+
+<p>
+  <div class='showpagefont'><strong>Opening Days: </strong></div>
+  <div class='showpage'><%= @restaurant.opening %></div>
+</p>
+
+<p>
+  <div class='showpagefont'><strong>Vegan: </strong></div>
+  <div class='showpage'><%= @restaurant.vegan %></div>
+</p>
+
+<p>
+  <div class='showpagefont'><strong>Comments: </strong></div>
+  <div class='comments'><%= @restaurant.comments %></div>
+</p>
+
+
+<p class='edit'>
     |
     <%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
     |
     <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: { confirm: 'Are you Sure?' } %>
     |
     <%= link_to 'Back', restaurants_path %>
-  </p>
+</p>
 
   
-<strong>Address:</strong>
-  <%=  @restaurant.location %> <br>
-     <iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyByvLVT63J7qkBgDe7VL50GvH3Ywcizf90
-    &q=<%=@restaurant.location %>" allowfullscreen>
-</iframe>
-  
+<div class='showpagefont'><strong>Address: </strong></div>
+  <div class='showpage'><%=  @restaurant.location %> <br></div>
+    <iframe
+       width="600"
+       height="450"
+       frameborder="0" style="border:0"
+       src="https://www.google.com/maps/embed/v1/place?key=AIzaSyByvLVT63J7qkBgDe7VL50GvH3Ywcizf90
+       &q=<%=@restaurant.location %>" allowfullscreen>
+    </iframe>
 <p>
   <%= image_tag @restaurant.image.url( :medium, class: "restaurant_image") %>
 </p> 

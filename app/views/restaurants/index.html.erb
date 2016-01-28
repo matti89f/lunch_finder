@@ -9,7 +9,7 @@
             <% end %>
           </div>
           <h2>
-            <%= link_to restaurant.name.capitalize, restaurant %>
+            <%= link_to restaurant.name.split(' ').map {|w| w.capitalize }.join(' '), restaurant %>
           </h2>
         </div>
       </div>

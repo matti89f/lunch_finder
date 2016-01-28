@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: "wlw", password: "wlwlunch", only: [:edit, :destroy]   
   # GET /restaurants
   # GET /restaurants.json
   def index
