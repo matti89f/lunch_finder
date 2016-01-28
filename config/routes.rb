@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get 'restaurants/redirect_to_random'
   get 'restaurants/redirect_to_random_vegan'
   get 'restaurants/home_page'
-  get 'restaurants/about'
   get 'restaurants/restaurants'
   resources :restaurants
 
