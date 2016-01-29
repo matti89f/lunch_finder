@@ -1614,6 +1614,43 @@ xpush
 
 
 
+#follow{ 
+border: 2px solid #ACA3A3;
+padding: 5px 5px 5px 0px;
+overflow: hidden;
+display: inline-block;
+}
+#follow a{ 
+width:32px; 
+height:32px; 
+margin:0 0 0 2px; 
+display:block; 
+float:left; 
+background:url(http://i.imgur.com/ARnVpCd.png) no-repeat 0 0; 
+line-height:0; 
+font-size:0; 
+color:transparent 
+} 
+#follow a:hover{ 
+opacity:.5 
+} 
+#follow a.facebook{ 
+background-position:0 -105px; 
+margin-left:9px!important 
+} 
+#follow a.twitter{ 
+background-position:0 -70px 
+} 
+#follow a.gplus{ 
+background-position:0 -140px 
+} 
+#follow a.rss{ 
+background-position:0 -35px 
+} 
+#follow a.tube{ 
+background-position:0 0 
+} 
+
 
 
 
