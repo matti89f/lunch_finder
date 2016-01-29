@@ -12,7 +12,7 @@ class RestaurantsController < ApplicationController
       @restaurants = Restaurant.all
     end
     if params[:search]
-      @restaurants = Restaurant.where("name like ? OR website LIKE ? OR comments LIKE :search", search: "%#{params[:search]}%").order("created_at DESC")
+      @restaurants = Restaurant.where("name LIKE :search OR website LIKE :search OR comments LIKE :search", search: "%#{params[:search]}%").order("created_at DESC")
     else
       @restaurants = Restaurant.all.order('created_at DESC')
     end
