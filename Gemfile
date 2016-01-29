@@ -17,7 +17,7 @@ gem 'simple_form'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 group :development, :test do
   gem 'byebug'
   gem 'pry'
